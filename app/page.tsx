@@ -3,6 +3,12 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SocialLinks from "./components/SocialLinks";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], 
+});
 
 const navItems = [
   { id: "home", label: "home" },
@@ -76,6 +82,23 @@ export default function Home() {
       el.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
     }
+  }
+
+  const skills = {
+    Languages: [
+      { name: "Python", icon: "" },
+      { name: "TypeScript", icon: "📘" },
+      { name: "JavaScript", icon: "📜" },
+      { name: "C++", icon: "⚡" },
+      { name: "C", icon: "🔧" },
+      { name: "HTML", icon: "🌐" },
+      { name: "CSS", icon: "🎨" },
+    ],
+    "Technologies/Frameworks": [
+      { name: "React", icon: "⚛️" },
+      { name: "Next.js", icon: "▲" },
+      { name: "Tailwind", icon: "🌊" },
+    ],
   }
 
   return (
@@ -195,37 +218,117 @@ export default function Home() {
         alt="about bg"
         width={950}
         height={800}
-        className="object-full shadow-xl rounded-md h-auto"
+        className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
         priority
       />
 
+      <div className="absolute"
+        style={{ 
+          top:140, 
+          right:880
+          }}>
+        <Image
+          src="/baby1.JPG"
+          alt="baby me on laptop"
+          width={210}
+          height={175}
+          className="object-full border-white border-10 shadow-xl rounded-md h-auto"
+          priority
+        />
+      </div>
+
+      <div className="absolute"
+        style={{ 
+          top:350, 
+          right:880
+          }}>
+        <Image
+          src="/baby2.JPG"
+          alt="baby me on laptop 2"
+          width={210}
+          height={175}
+          className="object-full shadow-xl border-white border-10  rounded-md h-auto"
+          priority
+        />
+      </div>
+
         {/* overlay text */}
-        <div className="absolute top-50 left-140 z-10 max-w-lg">
+        <div className="absolute top-60 left-140 z-10 max-w-lg">
+          <p className={`${sourceSans.className} font-semibold absolute`}
+           style={{ 
+            top:75, 
+            right:630
+          }}
+          >IMG_1215.JPG</p>
+          <p className={`${sourceSans.className} font-semibold absolute`}
+           style={{ 
+            top:285, 
+            right:630
+          }}
+          >IMG_1216.JPG</p>
           <h2 className="text-3xl font-bold mb-4">Get to know me!</h2>
           <p className=" text-md">
             I&apos;m currently a <span className="font-bold">sophomore</span> at <span className="font-bold">UC Davis</span>, studying <span className="font-bold">Computer Science</span>. I love using <span className="font-bold">software</span> to build things that help out the community or improve the way people work.
           </p>
           <p className="mt-4 text-md">
-            Outside of coding, I enjoy badminton, visiting my friends&apos; dogs, and making coffee.
+            Outside of coding, I enjoy playing badminton, visiting my friends&apos; dogs, and making coffee.
           </p>
         </div>
       </div>
     </section>
 
       <section
-        id="skills"
-        className="text-center min-h-screen px-8 py-20 bg-gray-100 text-gray-700 dark:text-gray-300"
-      >
-        <h2 className="text-3xl font-bold mb-4">Skills</h2>
-        <p>Skills section content goes here...</p>
-      </section>
+  id="skills"
+  className="relative flex text-center min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
+>
+  {/* container for image + overlay text */}
+  <div className="relative w-full flex justify-center right-5">
+    {/* background image */}
+    <Image
+      src="/skills.png"
+      alt="skills bg"
+      width={950}
+      height={800}
+      className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
+      priority
+    />
+
+    <div className="absolute top-47 z-10 max-w-full w-[90vw]">
+      {/* <h2 className="text-3xl font-bold mb-15">Skills</h2> */}
+      
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-12 px-10">
+        {Object.entries(skills).map(([category, skillList]) => (
+          <div key={category} className="space-y-2">
+            <h3
+              className="font-bold text-gray-800 text-center mb-5"
+              style={{ fontSize: "27px" }}
+            >
+              {category}
+            </h3>
+            <div className="m-auto flex w-full flex-nowrap gap-2 justify-center overflow-x-auto">
+              {skillList.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-3 py-2 text-sm text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                >
+                  <span>{skill.icon}</span>
+                  {skill.name}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section
         id="projects"
         className="text-center min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
       >
-        <h2 className="text-3xl font-bold mb-4">Projects</h2>
-        <p>Projects section content goes here...</p>
+        <h2 className="text-3xl font-bold mb-4">What I've built</h2>
+        <p>section under construction...</p>
       </section>
 
       <section

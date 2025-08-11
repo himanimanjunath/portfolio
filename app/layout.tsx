@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inria_Serif } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "300", "700"],
+})
 
 const inriaSerif = Inria_Serif({
   subsets: ["latin"],
-  weight: ["400", "700"], // choose weights you need
+  weight: ["400", "700"], 
 });
 
 const geistSans = Geist({
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inriaSerif.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inriaSerif.className} ${sourceSans.className} antialiased`}
       >
         {children}
       </body>
