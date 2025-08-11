@@ -9,19 +9,19 @@ export default function SocialLinks() {
 
       {/* Icons */}
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/himanimanjunath"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-700 hover:text-black transition-colors"
+        className="text-gray-700 hover:text-gray-500 transition-colors"
       >
         <FaGithub size={24} />
       </a>
 
       <a
-        href="https://linkedin.com/in/yourusername"
+        href="https://www.linkedin.com/in/himanimanjunath/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-700 hover:text-blue-600 transition-colors"
+        className="text-gray-700 hover:text-gray-500 transition-colors"
       >
         <FaLinkedin size={24} />
       </a>
@@ -30,10 +30,16 @@ export default function SocialLinks() {
         href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-700 hover:text-green-600 transition-colors"
+        className="text-gray-700 hover:text-gray-500 transition-colors"
       >
         <FaFileAlt size={24} />
       </a>
+
+      {/* 
+      {/* Vertical line */}
+      {/* 
+      <div className="w-1.5 h-160 bg-black rounded-b-full"></div>
+      */}
 
       
     </div>
