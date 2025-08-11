@@ -23,6 +23,8 @@ export default function Home() {
   const titles = ["Coder.", "Full-Stack Developer.", "Software Engineer."];
 
   useEffect(() => {
+    const titles = ["Coder.", "Full-Stack Developer.", "Software Engineer."];
+
     const currentTitle = titles[currentIndex];
     const typingSpeed = 100;
     const pauseTime = isDeleting ? 500 : 2000;
@@ -41,7 +43,7 @@ export default function Home() {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, currentIndex, isDeleting, titles]);
+  }, [displayText, currentIndex, isDeleting]);
 
   // active nav item state for highlighting
   const [activeSection, setActiveSection] = useState("home");
@@ -147,7 +149,7 @@ export default function Home() {
               Nice to meet you!
             </h3>
             <h1 className="inline-block select-none text-5xl font-bold text-gray-800 dark:text-gray-200 md:text-7xl lg:text-7xl xl:text-7xl">
-              I'm Himani.
+              I&apos;m Himani.
             </h1>
           </div>
           <h3
@@ -201,10 +203,10 @@ export default function Home() {
         <div className="absolute top-50 left-140 z-10 max-w-lg">
           <h2 className="text-3xl font-bold mb-4">Get to know me!</h2>
           <p className=" text-md">
-            I’m currently a <span className="font-bold">sophomore</span> at <span className="font-bold">UC Davis</span>, studying <span className="font-bold">Computer Science</span>. I love using <span className="font-bold">software</span> to build things that help out the community or improve the way people work.
+            I&apos;m currently a <span className="font-bold">sophomore</span> at <span className="font-bold">UC Davis</span>, studying <span className="font-bold">Computer Science</span>. I love using <span className="font-bold">software</span> to build things that help out the community or improve the way people work.
           </p>
           <p className="mt-4 text-md">
-            Outside of coding, I enjoy badminton, visiting my friends’ dogs, and making coffee.
+            Outside of coding, I enjoy badminton, visiting my friends&apos; dogs, and making coffee.
           </p>
         </div>
       </div>
