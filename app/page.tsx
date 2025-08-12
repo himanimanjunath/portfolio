@@ -87,17 +87,17 @@ export default function Home() {
   const skills = {
     Languages: [
       { name: "Python", icon: "" },
-      { name: "TypeScript", icon: "📘" },
-      { name: "JavaScript", icon: "📜" },
-      { name: "C++", icon: "⚡" },
-      { name: "C", icon: "🔧" },
-      { name: "HTML", icon: "🌐" },
-      { name: "CSS", icon: "🎨" },
+      { name: "TypeScript", icon: "" },
+      { name: "JavaScript", icon: "" },
+      { name: "C++", icon: "" },
+      { name: "C", icon: "" },
+      { name: "HTML", icon: "" },
+      { name: "CSS", icon: "" },
     ],
     "Technologies/Frameworks": [
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
-      { name: "Tailwind", icon: "🌊" },
+      { name: "React", icon: "" },
+      { name: "Next.js", icon: "" },
+      { name: "Tailwind", icon: "" },
     ],
   }
 
@@ -208,7 +208,7 @@ export default function Home() {
       {/* planned sections for rest of portfolio */}
       <section
           id="about"
-          className="relative flex text-left min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
+          className="relative flex text-left min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
       >
       {/* container for image + overlay text */}
       <div className="relative w-full flex justify-center right-5">
@@ -253,14 +253,14 @@ export default function Home() {
       </div>
 
         {/* overlay text */}
-        <div className="absolute top-60 left-140 z-10 max-w-lg">
-          <p className={`${sourceSans.className} font-semibold absolute`}
+        <div className="absolute top-60 left-138 z-10 max-w-lg">
+          <p className={`${sourceSans.className} text-sm absolute`}
            style={{ 
             top:75, 
             right:630
           }}
           >IMG_1215.JPG</p>
-          <p className={`${sourceSans.className} font-semibold absolute`}
+          <p className={`${sourceSans.className} text-sm absolute`}
            style={{ 
             top:285, 
             right:630
@@ -277,24 +277,24 @@ export default function Home() {
       </div>
     </section>
 
-      <section
-  id="skills"
-  className="relative flex text-center min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
->
-  {/* container for image + overlay text */}
-  <div className="relative w-full flex justify-center right-5">
-    {/* background image */}
-    <Image
-      src="/skills.png"
-      alt="skills bg"
-      width={950}
-      height={800}
-      className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
-      priority
+    <section
+    id="skills"
+    className="relative flex text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
+    >
+    {/* container for image + overlay text */}
+    <div className="relative w-full flex justify-center right-5">
+      {/* background image */}
+      <Image
+        src="/skills.png"
+        alt="skills bg"
+        width={950}
+        height={800}
+        className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
+        priority
     />
 
-    <div className="absolute top-47 z-10 max-w-full w-[90vw]">
-      {/* <h2 className="text-3xl font-bold mb-15">Skills</h2> */}
+    <div className="absolute top-37 z-10 max-w-full w-[90vw]">
+     <h2 className="text-3xl font-bold mb-10">Skills</h2> 
       
       <div className="grid grid-cols-1 md:grid-cols-1 gap-12 px-10">
         {Object.entries(skills).map(([category, skillList]) => (
@@ -309,23 +309,23 @@ export default function Home() {
               {skillList.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-3 py-2 text-sm text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex font-semibold cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-3 py-2 text-sm text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
                 >
-                  <span>{skill.icon}</span>
-                  {skill.name}
+                  <span className={sourceSans.className}>{skill.name}</span>
+                  {skill.icon}
                 </div>
               ))}
             </div>
           </div>
-        ))}
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section
         id="projects"
-        className="text-center min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
+        className="text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
       >
         <h2 className="text-3xl font-bold mb-4">What I've built</h2>
         <p>section under construction...</p>
@@ -333,11 +333,77 @@ export default function Home() {
 
       <section
         id="contact"
-        className="text-center min-h-screen px-8 py-20 bg-gray-50 text-gray-700 dark:text-gray-300"
+        className="relative flex text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
       >
-        <h2 className="text-3xl font-bold mb-4">Contact</h2>
-        <p>Contact section content goes here...</p>
+          <div className="relative w-full flex justify-center right-5">
+          {/* background image */}
+          <Image
+            src="/contact.png"
+            alt="contact bg"
+            width={950}
+            height={800}
+            className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
+            priority
+          />
+          </div>
+
+          <div className="absolute top-43 items-center left-99 z-10 ">
+
+            <h2 className="text-3xl font-bold mb-4">Contact</h2>
+
+            <p className="text-center pb-8 font-semibold">
+            <span className={sourceSans.className}>Please contact me directly at {" "} <a href="mailto:hmanjunath@ucdavis.edu" className="text-black underline">hmanjunath@ucdavis.edu</a>{" "} 
+            or through this form.</span>
+          </p>
+
+          <form className="space-y-5">
+            <div>
+              <input
+                type="email"
+                placeholder="Your email"
+                required
+                className="w-[600px] mx-auto block px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Your message"
+                rows={6}
+                required
+                className="w-[600px] mx-auto block px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="group bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 hover:scale-110 flex items-center gap-2 mx-auto"
+            >
+              Submit
+              <svg
+                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
       </section>
+
+      <footer 
+      className="w-full py-7 bg-gray-50 text-center text-sm text-black dark:bg-gray-900 dark:text-gray-400 pb-20"
+      >
+        &copy; {new Date().getFullYear()} Himani Manjunath. All rights reserved.
+      </footer>
+
 
       {/* blinking cursor style */}
       <style jsx>{`
