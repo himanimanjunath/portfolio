@@ -102,7 +102,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen relative">
+    <div className="bg-gray-50 min-h-screen relative pl-[5rem] pr-[6rem] md:pl-[6rem] md:pr-[8rem]">
       <SocialLinks />
 
       {/* Preload folder image to prevent any delay */}
@@ -115,7 +115,6 @@ export default function Home() {
         {navItems.map(({ id, label }) => {
           const isActive = activeSection === id;
           const isHovered = hoveredNav === id;
-          //const showDark = isActive || isHovered;
 
           return (
             <button
@@ -131,16 +130,6 @@ export default function Home() {
                 }`}
               aria-current={isActive ? "page" : undefined}
             >
-              {/* 
-              <Image
-                src={showDark ? folderDarkSrc : folderLightSrc}
-                alt={`${label} folder icon`}
-                width={70}
-                height={70}
-                className="object-contain"
-              />
-              */}
-
               <Image
                 src={folderLightSrc}
                 alt={`${label} folder icon`}
@@ -158,48 +147,32 @@ export default function Home() {
       </nav>
 
       {/* heyyy i'm himani text */}
-
       <main
         id="home"
-        className="relative flex items-center justify-center min-h-[calc(100vh-120px)] py-70 max-w-[55rem] mx-50"
+        className="relative flex flex-col md:flex-row items-center justify-center min-h-screen px-6 sm:px-12 lg:px-20 pr-4 md:pr-[calc(70px+2rem)] gap-17"
       >
-        <div className="w-full grid grid-cols-1 lg:grid-cols-1 gap-6 items-center pt-7 pl-3">
-          <div>
-            <h3
-              style={{ color: "#605151" }}
-              className="text-4xl font-semibold text-gray-700 dark:text-gray-300 lg:text-4xl xl:text-4xl"
-            >
-              Nice to meet you!
-            </h3>
-            <h1 className="inline-block select-none text-5xl font-bold text-gray-800 dark:text-gray-200 md:text-7xl lg:text-7xl xl:text-7xl">
-              I&apos;m Himani.
-            </h1>
-          </div>
-          <h3
-            style={{ color: "#605151" }}
-            className="text-4xl md:text-4xl lg:text-4xl font-bold text-gray-700 min-h-[1.2em] xl:text-4xl"
-          >
+        {/* Text content */}
+        <div className="flex flex-col items-start max-w-xl text-center md:text-left md:-ml-5">
+          <h3 className="text-3xl sm:text-4xl mb-2 font-semibold text-gray-700">
+            Nice to meet you!
+          </h3>
+          <h1 className="text-6xl sm:text-7xl font-bold mb-4 text-gray-800">
+            I&apos;m Himani.
+          </h1>
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-700 min-h-[1.2em]">
             {displayText}
             <span className="cursor text-md">|</span>
           </h3>
         </div>
 
-        {/* image of me */}
-        <div
-          className="absolute"
-          style={{
-            top: "160px",
-            right: "-75px",
-            width: "430px",
-          }}
-        >
+        {/* Profile image */}
+        <div className="w-[60vw] max-w-[420px] min-w-[200px] md:relative md:right-0">
           <Image
             src="/me.JPG"
             alt="profile photo"
-            width={256}
-            height={256}
-            className="object-contain rounded-sm w-full h-auto"
-            style={{ boxShadow: "0 8px 20px rgba(0, 0, 0, 0.5)" }}
+            width={400}
+            height={400}
+            className="w-full h-auto object-contain border-gray-300 border-1 rounded-sm shadow-2xl"
             priority
           />
         </div>
@@ -207,109 +180,78 @@ export default function Home() {
 
       {/* planned sections for rest of portfolio */}
       <section
-          id="about"
-          className="relative flex text-left min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
+        id="about"
+        className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
       >
-      {/* container for image + overlay text */}
-      <div className="relative w-full flex justify-center right-5">
-      {/* background image */}
-      <Image
-        src="/about.png"
-        alt="about bg"
-        width={950}
-        height={800}
-        className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
-        priority
-      />
+        <div
+          className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
+          style={{ backgroundImage: "url('/about.png')" }}
+        >
+          {/* Baby 1 */}
+          <div className="absolute top-[20%] left-[10%]">
+            <Image
+              src="/baby1.JPG"
+              alt="baby me on laptop"
+              width={210}
+              height={175}
+              className="w-[60%] h-auto border-white border-8 shadow-xl rounded-md"
+            />
+            <p className={`${sourceSans.className} text-center pr-32 text-sm mt-3`}>IMG_1215.JPG</p>
+          </div>
 
-      <div className="absolute"
-        style={{ 
-          top:140, 
-          right:880
-          }}>
-        <Image
-          src="/baby1.JPG"
-          alt="baby me on laptop"
-          width={210}
-          height={175}
-          className="object-full border-white border-10 shadow-xl rounded-md h-auto"
-          priority
-        />
-      </div>
+          {/* Baby 2 */}
+          <div className="absolute top-[55%] left-[10%]">
+            <Image
+              src="/baby2.JPG"
+              alt="baby me on laptop 2"
+              width={210}
+              height={175}
+              className="w-[60%] h-auto border-white border-8 shadow-xl rounded-md"
+            />
+            <p className={`${sourceSans.className} text-sm text-center pr-32 mt-3`}>IMG_1216.JPG</p>
+          </div>
 
-      <div className="absolute"
-        style={{ 
-          top:350, 
-          right:880
-          }}>
-        <Image
-          src="/baby2.JPG"
-          alt="baby me on laptop 2"
-          width={210}
-          height={175}
-          className="object-full shadow-xl border-white border-10  rounded-md h-auto"
-          priority
-        />
-      </div>
-
-        {/* overlay text */}
-        <div className="absolute top-60 left-138 z-10 max-w-lg">
-          <p className={`${sourceSans.className} text-sm absolute`}
-           style={{ 
-            top:75, 
-            right:630
-          }}
-          >IMG_1215.JPG</p>
-          <p className={`${sourceSans.className} text-sm absolute`}
-           style={{ 
-            top:285, 
-            right:630
-          }}
-          >IMG_1216.JPG</p>
-          <h2 className="text-3xl font-bold mb-4">Get to know me!</h2>
-          <p className=" text-md">
-            I&apos;m currently a <span className="font-bold">sophomore</span> at <span className="font-bold">UC Davis</span>, studying <span className="font-bold">Computer Science</span>. I love using <span className="font-bold">software</span> to build things that help out the community or improve the way people work.
-          </p>
-          <p className="mt-4 text-md">
-            Outside of coding, I enjoy playing badminton, visiting my friends&apos; dogs, and making coffee.
-          </p>
+          {/* Text */}
+          <div className="absolute top-[28%] right-[5%] p-7 w-[59%]">
+            <h2 className="text-3xl font-bold mb-4">Get to know me!</h2>
+            <p className="text-lg">
+              I&apos;m currently a <span className="font-bold">sophomore</span> at{" "}
+              <span className="font-bold">UC Davis</span>, studying{" "}
+              <span className="font-bold">Computer Science</span>. I love using{" "}
+              <span className="font-bold">software</span> to build things that help out the community or improve the way people work.
+            </p>
+            <p className="mt-4 text-lg">
+              Outside of coding, I enjoy playing badminton, visiting my friends&apos; dogs, and making coffee.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section
-    id="skills"
-    className="relative flex text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
-    >
-    {/* container for image + overlay text */}
-    <div className="relative w-full flex justify-center right-5">
-      {/* background image */}
-      <Image
-        src="/skills.png"
-        alt="skills bg"
-        width={950}
-        height={800}
-        className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
-        priority
-    />
+      <section
+  id="skills"
+  className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
+>
+  <div
+    className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
+    style={{ backgroundImage: "url('/skills.png')" }}
+  >
+    <div className="max-w-full mt-33">
+      <h2 className="text-3xl font-bold mb-10 text-center">Skills</h2>
 
-    <div className="absolute top-37 z-10 max-w-full w-[90vw]">
-     <h2 className="text-3xl font-bold mb-10">Skills</h2> 
-      
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-12 px-10">
+      {/* Skills categories container */}
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-full">
         {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="space-y-2">
+          <div key={category} className="space-y-4">
             <h3
-              className="font-bold text-gray-800 text-center mb-5"
-              style={{ fontSize: "27px" }}
+              className="font-bold text-gray-800 dark:text-gray-200 text-center text-2xl md:text-3xl"
             >
               {category}
             </h3>
-            <div className="m-auto flex w-full flex-nowrap gap-2 justify-center overflow-x-auto">
+            <div className="flex flex-wrap justify-center gap-3 overflow-x-auto py-2">
               {skillList.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex font-semibold cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-3 py-2 text-sm text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex font-semibold cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-md text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 whitespace-nowrap"
                 >
                   <span className={sourceSans.className}>{skill.name}</span>
                   {skill.icon}
@@ -317,93 +259,130 @@ export default function Home() {
               ))}
             </div>
           </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-      </section>
+    </div>
+  </div>
+</section>
 
       <section
         id="projects"
-        className="text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
+        className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
       >
-        <h2 className="text-3xl font-bold mb-4">What I've built</h2>
-        <p>section under construction...</p>
+        <div
+    className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
+    style={{ backgroundImage: "url('/projects.png')" }}
+  >
+    <div className="max-w-full max-w-xl mx-auto text-center mt-30">
+      <h2 className="text-3xl font-bold mb-5">What I've built</h2>
+
+<a
+  href="https://github.com/himanimanjunath/simplify"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block"
+>
+
+<div className="bg-gray-100 hover:bg-gray-200 text-left transition-colors duration-300 rounded-md p-6 md:p-8 mx-auto max-w-[100%]">
+  <div className={`${sourceSans.className} grid grid-cols-[1fr_1.2fr] gap-6 items-center`}>
+    
+    {/* Text side - smaller font */}
+    <div className="space-y-2">
+      <h3 className="text-xl font-bold text-gray-800">simplify</h3>
+      <p className="text-gray-700 text-md md mb-5">
+        I worked with 2 others to create a Chrome Extension that helps neurodivergent users by visually simplifying websites.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <div className="px-3 py-1 bg-gray-600 text-white rounded-full text-xs">HTML</div>
+        <div className="px-3 py-1 bg-gray-600 text-white rounded-full text-xs">CSS</div>
+        <div className="px-3 py-1 bg-gray-600 text-white rounded-full text-xs">JavaScript</div>
+        <div className="px-3 py-1 bg-gray-600 text-white rounded-full text-xs">Chrome Extensions API</div>
+      </div>
+    </div>
+
+    
+
+    {/* Image side - larger */}
+    <Image
+      src="/sim.png"
+      alt="Simplify project screenshot"
+      width={550} // larger width
+      height={550}
+      className="w-full h-auto object-contain"
+      priority
+    />
+  </div>
+</div>
+
+</a>
+
+      </div>
+      </div>
       </section>
+
 
       <section
-        id="contact"
-        className="relative flex text-center min-h-screen px-8 py-13 bg-gray-50 text-gray-700 dark:text-gray-300"
+  id="contact"
+  className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
+>
+  <div
+    className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
+    style={{ backgroundImage: "url('/contact.png')" }}
+  >
+    <div className="max-w-full max-w-xl mx-auto text-center mt-27">
+      <h2 className="text-3xl font-bold mb-5">Contact</h2>
+      <p className={`${sourceSans.className} font-semibold mb-7`}>
+        Please contact me directly at{" "}
+        <a
+          href="mailto:hmanjunath@ucdavis.edu"
+          className="text-black underline"
+        >
+          hmanjunath@ucdavis.edu
+        </a>{" "}
+        or through this form.
+      </p>
+
+      <form className="space-y-4">
+        <input
+          type="email"
+          placeholder="Your email"
+          required
+          className="w-full px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
+        />
+        <textarea
+          placeholder="Your message"
+          rows={6}
+          required
+          className="w-full px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
+        />
+        <button
+          type="submit"
+          className="group bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 hover:scale-110 flex items-center gap-2 mx-auto"
+        >
+          Submit
+          <svg
+            className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+      <footer
+        className="w-full py-7 bg-gray-50 text-center text-sm text-black dark:bg-gray-900 dark:text-gray-400 pb-20"
       >
-          <div className="relative w-full flex justify-center right-5">
-          {/* background image */}
-          <Image
-            src="/contact.png"
-            alt="contact bg"
-            width={950}
-            height={800}
-            className="object-full shadow-xl rounded-md border-gray-200 border-2 h-auto"
-            priority
-          />
-          </div>
-
-          <div className="absolute top-43 items-center left-99 z-10 ">
-
-            <h2 className="text-3xl font-bold mb-4">Contact</h2>
-
-            <p className="text-center pb-8 font-semibold">
-            <span className={sourceSans.className}>Please contact me directly at {" "} <a href="mailto:hmanjunath@ucdavis.edu" className="text-black underline">hmanjunath@ucdavis.edu</a>{" "} 
-            or through this form.</span>
-          </p>
-
-          <form className="space-y-5">
-            <div>
-              <input
-                type="email"
-                placeholder="Your email"
-                required
-                className="w-[600px] mx-auto block px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <textarea
-                placeholder="Your message"
-                rows={6}
-                required
-                className="w-[600px] mx-auto block px-4 py-4 bg-white/80 backdrop-blur-sm border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-700 focus:border-transparent"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="group bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 hover:scale-110 flex items-center gap-2 mx-auto"
-            >
-              Submit
-              <svg
-                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer 
-      className="w-full py-7 bg-gray-50 text-center text-sm text-black dark:bg-gray-900 dark:text-gray-400 pb-20"
-      >
-        &copy; {new Date().getFullYear()} Himani Manjunath. All rights reserved.
+        &copy; {new Date().getFullYear()}, designed and built with love by Himani 
       </footer>
-
 
       {/* blinking cursor style */}
       <style jsx>{`

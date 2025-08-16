@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 export default function SocialLinks() {
   return (
     
-    <div className="fixed top-0 left-15 flex flex-col items-center space-y-4 z-50">
+    <div className="fixed top-0 left-20 flex flex-col items-center space-y-4 z-50">
       {/* Vertical line */}
       <div className="w-1.5 h-25 bg-black rounded-b-full"></div>
 
@@ -25,6 +25,8 @@ export default function SocialLinks() {
       >
         <FaLinkedin size={24} />
       </a>
+
+      {/* 
 
       <a
         href="/resume.pdf"
