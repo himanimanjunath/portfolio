@@ -274,7 +274,7 @@ export default function Home() {
     style={{ backgroundImage: "url('/projects.png')" }}
   >
     <div className="max-w-full max-w-xl mx-auto text-center mt-30">
-      <h2 className="text-3xl font-bold mb-5">What I've built</h2>
+      <h2 className="text-3xl font-bold mb-5">What I&apos;ve built</h2>
 
 <a
   href="https://github.com/himanimanjunath/simplify"
