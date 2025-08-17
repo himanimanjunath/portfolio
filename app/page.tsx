@@ -18,8 +18,8 @@ const navItems = [
   { id: "contact", label: "contact" },
 ];
 
-const folderLightSrc = "/folder.png";      // Your light folder image
-// const folderDarkSrc = "/folder-dark.png";  // Your darker folder image
+const folderLightSrc = "/folder.png";      
+// const folderDarkSrc = "/folder-dark.png";  
 
 export default function Home() {
   const [displayText, setDisplayText] = useState("");
@@ -105,7 +105,7 @@ export default function Home() {
     <div className="bg-gray-50 min-h-screen relative pl-[5rem] pr-[6rem] md:pl-[6rem] md:pr-[8rem]">
       <SocialLinks />
 
-      {/* Preload folder image to prevent any delay */}
+      {/* preloading folder images to prevent delays */}
       <div style={{ display: "none" }}>
         <Image src={folderLightSrc} alt="" width={70} height={70} priority />
       </div>
@@ -151,7 +151,7 @@ export default function Home() {
         id="home"
         className="relative flex flex-col md:flex-row items-center justify-center min-h-screen px-6 sm:px-12 lg:px-20 pr-4 md:pr-[calc(70px+2rem)] gap-17"
       >
-        {/* Text content */}
+        {/* text content */}
         <div className="flex flex-col items-start max-w-xl text-center md:text-left md:-ml-5">
           <h3 className="text-3xl sm:text-4xl mb-2 font-semibold text-gray-700">
             Nice to meet you!
@@ -165,10 +165,10 @@ export default function Home() {
           </h3>
         </div>
 
-        {/* Profile image */}
+        {/* pfp image */}
         <div className="w-[60vw] max-w-[420px] min-w-[200px] md:relative md:right-0">
           <Image
-            src="/me.JPG"
+            src="/me.jpg"
             alt="profile photo"
             width={400}
             height={400}
@@ -187,7 +187,7 @@ export default function Home() {
           className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
           style={{ backgroundImage: "url('/about.png')" }}
         >
-          {/* Baby 1 */}
+          {/* baby pic 1 */}
           <div className="absolute top-[20%] left-[10%]">
             <Image
               src="/baby1.JPG"
@@ -199,7 +199,7 @@ export default function Home() {
             <p className={`${sourceSans.className} text-center pr-32 text-sm mt-3`}>IMG_1215.JPG</p>
           </div>
 
-          {/* Baby 2 */}
+          {/* baby pic 2 */}
           <div className="absolute top-[55%] left-[10%]">
             <Image
               src="/baby2.JPG"
@@ -211,7 +211,7 @@ export default function Home() {
             <p className={`${sourceSans.className} text-sm text-center pr-32 mt-3`}>IMG_1216.JPG</p>
           </div>
 
-          {/* Text */}
+          {/* text */}
           <div className="absolute top-[28%] right-[5%] p-7 w-[59%]">
             <h2 className="text-3xl font-bold mb-4">Get to know me!</h2>
             <p className="text-lg">
@@ -228,42 +228,42 @@ export default function Home() {
       </section>
 
       <section
-  id="skills"
-  className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
->
-  <div
-    className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
-    style={{ backgroundImage: "url('/skills.png')" }}
-  >
-    <div className="max-w-full mt-33">
-      <h2 className="text-3xl font-bold mb-10 text-center">Skills</h2>
+      id="skills"
+      className="flex justify-center items-center min-h-screen px-6 py-10 bg-gray-50 text-gray-700 pr-4 md:pr-[calc(30px+2rem)]"
+    >
+      <div
+        className="relative w-full max-w-[57rem] border-gray-200 border-2 shadow-xl rounded-md aspect-[950/609] bg-no-repeat bg-contain bg-center"
+        style={{ backgroundImage: "url('/skills.png')" }}
+      >
+      <div className="max-w-full mt-33">
+        <h2 className="text-3xl font-bold mb-10 text-center">Skills</h2>
 
-      {/* Skills categories container */}
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-full">
-        {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="space-y-4">
-            <h3
-              className="font-bold text-gray-800 dark:text-gray-200 text-center text-2xl md:text-3xl"
-            >
-              {category}
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3 overflow-x-auto py-2">
-              {skillList.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex font-semibold cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-md text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 whitespace-nowrap"
-                >
-                  <span className={sourceSans.className}>{skill.name}</span>
-                  {skill.icon}
-                </div>
-              ))}
+        {/* skills categories container */}
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-full">
+          {Object.entries(skills).map(([category, skillList]) => (
+            <div key={category} className="space-y-4">
+              <h3
+                className="font-bold text-gray-800 dark:text-gray-200 text-center text-2xl md:text-3xl"
+              >
+                {category}
+              </h3>
+              <div className="flex flex-wrap justify-center gap-3 overflow-x-auto py-2">
+                {skillList.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex font-semibold cursor-default select-none items-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-md text-gray-600 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 whitespace-nowrap"
+                  >
+                    <span className={sourceSans.className}>{skill.name}</span>
+                    {skill.icon}
+                  </div>
+                ))}
+              </div>
             </div>
+          ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section
         id="projects"
@@ -286,7 +286,7 @@ export default function Home() {
 <div className="bg-gray-100 hover:bg-gray-200 text-left transition-colors duration-300 rounded-md p-6 md:p-8 mx-auto max-w-[100%]">
   <div className={`${sourceSans.className} grid grid-cols-[1fr_1.2fr] gap-6 items-center`}>
     
-    {/* Text side - smaller font */}
+    {/* text side*/}
     <div className="space-y-2">
       <h3 className="text-xl font-bold text-gray-800">simplify</h3>
       <p className="text-gray-700 text-md md mb-5">
@@ -302,11 +302,11 @@ export default function Home() {
 
     
 
-    {/* Image side - larger */}
+    {/* image side */}
     <Image
       src="/sim.png"
       alt="Simplify project screenshot"
-      width={550} // larger width
+      width={550} 
       height={550}
       className="w-full h-auto object-contain"
       priority
